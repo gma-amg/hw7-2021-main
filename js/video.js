@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		if (videoElement.paused) {
 		  videoElement.play(); // Play the video
 		}
-		updateVolumeInfo(); // Update volume display
+		updateVolume(); // Update volume display
 		videoElement.play();
  	});
 
