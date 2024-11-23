@@ -53,12 +53,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 	muteButton.addEventListener("click", function(){
-		video.muted = !video.muted;
+		videoElement.muted = !video.muted;
         muteButton.textContent = video.muted ? "Unmute" : "Mute";
 	});
 
 	volumeSlider.addEventListener("input", function () {
-        video.volume = volumeSlider.value / 100;
+        videoElement.volume = volumeSlider.value / 100;
         updateVolume();
     });
 
@@ -67,11 +67,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 	vintageButton.addEventListener("click", function () {
-        video.classList.add("oldSchool");
+        videoElement.classList.add("oldSchool");
     });
 
 	origButton.addEventListener("click", function () {
-        video.classList.remove("oldSchool");
+        videoElement.classList.remove("oldSchool");
     });
 
 
