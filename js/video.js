@@ -36,25 +36,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	slowerButton.addEventListener("click", function(){
 		videoElement.playbackRate *= 0.9;
-        console.log(`Current speed: ${video.playbackRate.toFixed(2)}`);
+        console.log(`Current speed: ${videoElement.playbackRate.toFixed(2)}`);
 	});
 
 	fasterButton.addEventListener("click", function () {
         videoElement.playbackRate /= 0.9;
-        console.log(`Current speed: ${video.playbackRate.toFixed(2)}`);
+        console.log(`Current speed: ${videoElement.playbackRate.toFixed(2)}`);
     });
 
 	skipButton.addEventListener("click", function () {
         videoElement.currentTime += 10;
-        if (video.currentTime >= video.duration) {
-            video.currentTime = 0;  // Restart if past the end
+        if (videoElement.currentTime >= videoElement.duration) {
+            videoElement.currentTime = 0;  // Restart if past the end
         }
-        console.log(`Current time: ${video.currentTime.toFixed(2)} seconds`);
+        console.log(`Current time: ${videoElement.currentTime.toFixed(2)} seconds`);
     });
 
 	muteButton.addEventListener("click", function(){
-		videoElement.muted = !video.muted;
-        muteButton.textContent = video.muted ? "Unmute" : "Mute";
+		videoElement.muted = !videoElement.muted;
+        muteButton.textContent = videoElement.muted ? "Unmute" : "Mute";
 	});
 
 	volumeSlider.addEventListener("input", function () {
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 	function updateVolume() {
-        volumeDisplay.textContent = `${Math.round(video.volume * 100)}%`;
+        volumeDisplay.textContent = `${Math.round(videoElement.volume * 100)}%`;
     }
 
 	vintageButton.addEventListener("click", function () {
